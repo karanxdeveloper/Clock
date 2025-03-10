@@ -22,17 +22,17 @@ function StopWatch() {
     }, [running])
 
     return (
-        <div className="main">
+        <div className="main w-[100vw] bg-red-600">
             <div className="container">
                 <div className="time">
                     <span>{("0" + Math.floor((count / 60000) % 60)).slice(-2)}: </span>
                     <span>{("0" + Math.floor((count / 1000) % 60)).slice(-2)}: </span>
                     <span>{("0" + ((count / 10) % 100)).slice(-2)} </span>
                 </div>
-                {running ? <button onClick={() => { setRunning(false) }}>stop</button> : <button onClick={() => { setRunning(true) }}>start</button>}
+                {running ? <button className="border" onClick={() => { setRunning(false) }}>stop</button> : <button className="border" onClick={() => { setRunning(true) }}>start</button>}
 
 
-                <button onClick={() => { setCount(0) }}>reset</button>
+                <button className="border" onClick={() => { setCount(0) }}>reset</button>
             </div>
         </div>
     )
